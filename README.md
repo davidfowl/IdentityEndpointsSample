@@ -3,7 +3,7 @@
 https://devblogs.microsoft.com/dotnet/improvements-auth-identity-aspnetcore-8/
 
 In .NET 8 preview 6, we've added new APIs to allow exposing endpoints to register, login and refresh bearer tokens. This is a simple API
-that returns tokens (or sets cookies) that is optimized usage with 1st party applications (no delegated authentication). The tokens are self conatined, and generated using the 
+that returns tokens (or sets cookies) that is optimized usage with 1st party applications (no delegated authentication). The tokens are self contained, and generated using the 
 same technique as cookie authentication. **These are NOT JWTs**, they are opaque tokens. To make issued tokens work across servers, [data protection](https://learn.microsoft.com/en-us/aspnet/core/security/data-protection/configuration/overview?view=aspnetcore-7.0) needs to be configured
 with shared storage.
 
