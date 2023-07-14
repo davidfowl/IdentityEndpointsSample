@@ -1,0 +1,29 @@
+# For more info on HTTP files go to https://aka.ms/vs/httpfile
+
+@user=admin
+@password=P@$$w0rd1
+
+POST https://localhost:7044/register
+Content-Type: application/json
+
+{
+  "username": {{user}},
+  "password": {{password}}
+}
+
+###
+
+POST https://localhost:7044/login
+Content-Type: application/json
+
+{
+  "username": {{user}},
+  "password": {{password}}
+}
+
+###
+
+@token = <your token here>
+
+GET https://localhost:7044/
+Authorization: Bearer {{token}}
