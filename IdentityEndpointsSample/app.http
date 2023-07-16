@@ -25,6 +25,17 @@ Content-Type: application/json
 ###
 
 @token=<your token here>
-
 GET {{url}}
 Authorization: Bearer {{token}}
+
+
+###
+
+@refreshToken=<your refresh token here>
+
+POST {{url}}/refresh
+Content-Type: application/json
+
+{
+  "refreshToken": "{{refreshToken}}"
+}
