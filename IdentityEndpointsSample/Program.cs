@@ -16,6 +16,13 @@ builder.Services.AddIdentityCore<MyUser>()
 
 var app = builder.Build();
 
+
+app.UseRouting();
+
+app.UseCors();
+
+app.UseAuthorization();
+
 // Adds /register, /login and /refresh endpoints
 app.MapIdentityApi<MyUser>();
 
