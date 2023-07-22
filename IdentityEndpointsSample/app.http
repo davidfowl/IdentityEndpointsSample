@@ -26,6 +26,11 @@ Content-Type: application/json
 ###
 
 @token=<your token here>
+GET {{url}}
+Authorization: Bearer {{token}}
+
+###
+@token=<your token here>
 GET {{url}}/users/me
 Authorization: Bearer {{token}}
 
