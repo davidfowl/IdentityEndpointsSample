@@ -22,10 +22,11 @@ Content-Type: application/json
   "password": "{{password}}"
 }
 
+
 ###
 
 @token=<your token here>
-GET {{url}}
+GET {{url}}/users/me
 Authorization: Bearer {{token}}
 
 

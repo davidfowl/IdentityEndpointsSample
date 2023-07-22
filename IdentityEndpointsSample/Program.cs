@@ -5,6 +5,24 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
+
+// Add services to the container.
+var configuration = builder.Configuration;
+
+//Add cors
+string[] allowedOrigins = configuration["Cors:AllowedOrigins"].Split(",");
+builder.Services.AddCors(options =>
+{
+    options.AddDefaultPolicy(
+        builder =>
+        {
+            builder.WithOrigins(allowedOrigins)
+                                .AllowAnyHeader()
+                                .AllowAnyMethod()
+                                .AllowCredentials();
+        });
+});
+
 builder.Services.AddAuthentication().AddIdentityBearerToken<MyUser>();
 builder.Services.AddAuthorizationBuilder();
 
@@ -13,6 +31,7 @@ builder.Services.AddDbContext<AppDbContext>(options => options.UseInMemoryDataba
 builder.Services.AddIdentityCore<MyUser>()
                 .AddEntityFrameworkStores<AppDbContext>()
                 .AddApiEndpoints();
+
 
 var app = builder.Build();
 
@@ -27,6 +46,9 @@ app.UseAuthorization();
 app.MapIdentityApi<MyUser>();
 
 app.MapGet("/", (ClaimsPrincipal user) => $"Hello {user.Identity!.Name}").RequireAuthorization();
+
+
+app.MapGet("/users/me", (ClaimsPrincipal user) => { return new { username =  user.Identity.Name }; }).RequireAuthorization().RequireCors();
 
 app.Run();
 

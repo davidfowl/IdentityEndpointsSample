@@ -1,0 +1,28 @@
+<mat-card class="example-card">
+    <mat-card-header>
+      <mat-card-title>Login</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <form *ngIf="loginForm" [formGroup]="loginForm" (ngSubmit)="onSubmit()"  fxLayout="column"  style="display: flex; flex-direction: column;">
+            <mat-form-field appearance="fill" >
+                <mat-label>Username</mat-label>
+                <input matInput type="text" formControlName="username">
+              </mat-form-field>
+        
+              <mat-form-field appearance="fill">
+                <mat-label>Password</mat-label>
+                <input matInput type="password" formControlName="password">
+              </mat-form-field>
+        
+              <div style="align-self: flex-end;">
+                
+                <a mat-button [routerLink]="['/register']" style="margin-right: 15px;">Register</a>
+                <button mat-raised-button color="primary" type="submit">Login</button>
+              </div>
+            </form>
+        
+            <div style="align-self: flex-end;">
+            </div>
+          </mat-card-content>
+</mat-card>
+ 

@@ -1,0 +1,5 @@
+<div *ngIf="user">
+    <h1>Welcome, {{user.username}}!</h1>
+    <p>Your token will expire on: {{expiryDate | date:'medium'}}</p>
+    <button mat-raised-button color="primary" (click)="refreshToken()">Refresh Token</button>
+  </div>
