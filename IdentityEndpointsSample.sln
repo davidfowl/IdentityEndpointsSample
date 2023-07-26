@@ -5,8 +5,6 @@ VisualStudioVersion = 17.8.33907.456
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IdentityEndpointsSample", "IdentityEndpointsSample\IdentityEndpointsSample.csproj", "{CDC28F91-3787-4557-B89E-1E2F2E647804}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Clients", "Clients", "{6C88A6E2-4511-44E5-8804-5983FAD6E52E}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
