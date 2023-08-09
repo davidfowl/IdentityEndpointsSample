@@ -21,6 +21,7 @@ export class RegisterComponent  implements OnInit {
 
   constructor(private formBuilder: FormBuilder, private authService: AuthService, private router: Router, private snackBar: MatSnackBar) {
     this.registerForm = this.formBuilder.group({
+      email: ['', Validators.required],
       username: ['', Validators.required],
       password: ['', Validators.required],
       passwordConfirm: ['', Validators.required]
@@ -34,6 +35,7 @@ export class RegisterComponent  implements OnInit {
     if (this.registerForm.valid) {
       if (this.registerForm.controls['password'].value === this.registerForm.controls['passwordConfirm'].value) {
         this.authService.register(
+          this.registerForm.controls['email'].value,
           this.registerForm.controls['username'].value,
           this.registerForm.controls['password'].value
         ).subscribe({

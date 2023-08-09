@@ -23,7 +23,7 @@ builder.Services.AddCors(options =>
         });
 });
 
-builder.Services.AddAuthentication().AddIdentityBearerToken<MyUser>();
+builder.Services.AddAuthentication().AddBearerToken(IdentityConstants.BearerScheme);
 builder.Services.AddAuthorizationBuilder();
 
 builder.Services.AddDbContext<AppDbContext>(options => options.UseInMemoryDatabase("AppDb"));

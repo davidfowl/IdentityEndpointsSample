@@ -3,13 +3,15 @@
 @url=https://localhost:7044
 @user=admin
 @password=P@$$w0rd1
+@email=admin@notadomain.com
 
 POST {{url}}/register
 Content-Type: application/json
 
 {
   "username": "{{user}}",
-  "password": "{{password}}"
+  "password": "{{password}}",
+  "email": "{{email}}"
 }
 
 ###

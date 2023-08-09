@@ -2,6 +2,12 @@
     <mat-card-content>
       <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="vertical-form">
         <mat-form-field class="full-width-input">
+          <mat-label>Email</mat-label>
+          <input matInput type="text" formControlName="email" required>
+          <mat-error *ngIf="registerForm.controls['email'].invalid">Email is required</mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="full-width-input">
           <mat-label>Username</mat-label>
           <input matInput type="text" formControlName="username" required>
           <mat-error *ngIf="registerForm.controls['username'].invalid">Username is required</mat-error>
