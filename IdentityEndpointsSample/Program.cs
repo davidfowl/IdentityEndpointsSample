@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
-WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
+var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddAuthentication().AddBearerToken(IdentityConstants.BearerScheme);
 builder.Services.AddAuthorizationBuilder();
@@ -18,7 +18,7 @@ builder.Services.AddIdentityCore<MyUser>()
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-WebApplication app = builder.Build();
+var app = builder.Build();
 
 // Adds /register, /login and /refresh endpoints
 app.MapIdentityApi<MyUser>();
