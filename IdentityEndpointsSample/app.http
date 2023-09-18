@@ -9,7 +9,6 @@ POST {{url}}/register
 Content-Type: application/json
 
 {
-  "username": "{{user}}",
   "password": "{{password}}",
   "email": "{{email}}"
 }
@@ -20,7 +19,7 @@ POST {{url}}/login
 Content-Type: application/json
 
 {
-  "username": "{{user}}",
+  "email": "{{email}}",
   "password": "{{password}}"
 }
 
